@@ -16,6 +16,7 @@ SCRIPT_DIR=$(pwd)
 mkdir -p $LOGS_FOLDER
 echo -e "Script Name: $SCRIPT_NAME executing at $(date)" | tee -a $LOG_FILE
 
+
 # To check if the user has root privileges
 # If the user ID is not 0, it means the script is not being run as root
 # If the user ID is 0, it means the script is being run as root
@@ -129,7 +130,7 @@ else
 fi
 
 END_TIME=$(date +%s)
-EXECUTION_TIME=$((END_TIME - START_TIME))
+EXECUTION_TIME=$(($END_TIME - $START_TIME))
 echo -e "$G Script executed in $EXECUTION_TIME seconds $N" | tee -a $LOG_FILE
 
 
